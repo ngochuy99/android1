@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">CycleStreets</string>
+    <string name="route_map">Journey planner</string>
+    <string name="itinerary">Itinerary</string>
+    <string name="elevation">Elevation</string>
+    <string name="photomap">Photomap</string>
+    <string name="photo_upload">Add photo</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="blog">Blog</string>
+    <string name="blog_updated">Blog - updated</string>
+
+    <string name="all_blank" translatable="false">"  "</string>
+    <string name="all_button_back">Back</string>
+    <string name="all_button_next">Next</string>
+    <string name="all_button_save">Save</string>
+    <string name="all_button_cancel">Cancel</string>
+    <string name="all_button_close">Close</string>
+    <string name="all_menu_back">Back</string>
+    <string name="all_menu_restart">Start again</string>
+    <string name="all_upload">Upload!</string>
+    <string name="all_your_name">Your name</string>
+    <string name="all_your_email">Your email address</string>
+
+    <string name="location_menu_mylocation">Show location</string>
+    <string name="location_menu_on">Follow Location</string>
+    <string name="location_menu_off">Location Off</string>
+
+    <string name="route_type">Route type</string>
+    <string name="route_finding_new">Obtaining route from CycleStreets.net, please wait</string>
+    <string name="route_fetching_existing">Fetching route from CycleStreets.net, please wait</string>
+    <string name="route_finding_failed">Route finding failed</string>
+    <string name="alt_route_finding_failed">Alternative route could not be retrieved.  Try pressing the back button to remove last waypoint.</string>
+    <string name="route_loading">Loading route, please wait</string>
+    <string name="route_not_found" translatable="false">Route not found</string>
+    <string name="could_not_contact_server" translatable="false">Could not contact CycleStreets.net : </string>
+    <string name="route_hint1">Hint: Tap screen to add waypoint or long press for options</string>
+    <string name="route_max_waypoints">Maximum number of waypoints reached.</string>
+
+    <string name="route_menu_change">Change route type</string>
+    <string name="route_menu_alternative" translatable="false">Alternative route</string>
+    <string name="route_menu_change_reverse">Reverse route</string>
+    <string name="route_menu_change_waypoints">Add / Remove waypoints</string>
+    <string name="route_menu_change_share">Share this route</string>
+    <string name="route_menu_change_comment">Comment on this route</string>
+    <string name="route_menu_change_replan_fastest">Replan as fastest</string>
+    <string name="route_menu_change_replan_balanced">Replan as balanced</string>
+    <string name="route_menu_change_replan_quietest">Replan as quietest</string>
+    <string name="route_menu_change_replan_shortest">Replan as shortest</string>
+    <string name="route_menu_change_reroute_from_here">Reroute from current location</string>
+
+    <string name="leisure1" translatable="false">Circular Route 1</string>
+    <string name="leisure2" translatable="false">Circular Route 2</string>
+    <string name="leisure3" translatable="false">Circular Route 3</string>
+    <string name="leisure4" translatable="false">Circular Route 4</string>
+    <string name="leisure5" translatable="false">Circular Route 5</string>
+    <string name="leisure6" translatable="false">Circular Route 6</string>
+    <string name="leisure7" translatable="false">Circular Route 7</string>
+    <string name="leisure8" translatable="false">Circular Route 8</string>
+
+    <string name="tap_map_set_start" translatable="false">Tap map to set Start</string>
+    <string name="tap_map_waypoint_circular_route" translatable="false">Tap map to set Waypoint, or\nTap here for Circular Route</string>
+    <string name="tap_map_waypoint_route" translatable="false">Tap map to set Waypoint, or\nTap here to Route</string>
+    <string name="tap_map_waypoint_route_alt" translatable="false">Tap map to add Waypoint, or\nTap here to accept alternative route</string>
+    <string name="tap_here_route" translatable="false">Tap here to Route</string>
+    <string name="tap_here_reroute" translatable="false">Tap here to accept alternative route</string>
+
+    <string name="route_no_location">Location not currently available.</string>
+
+    <string name="photo_upload_hint1">Upload reports of cycling-related problems or of good practice.</string>
+    <string name="photo_upload_hint2">These will be used so that we can report problems to decision makers.</string>
+    <string name="photo_take_button">Take a photo</string>
+    <string name="photo_select_button">Select existing photo</string>
+    <string name="photo_describe_hint">Describe this photo</string>
+    <string name="photo_good_or_bad_hint">Is this a problem or good practice?</string>
+    <string name="photo_feature_type_hint">What type of feature is being shown?</string>
+    <string name="photo_could_not_load_categories">Could not load photomap categories.  Please check network connection.</string>
+    <string name="photo_location_hint">Where was this photo taken?</string>
+    <string name="photo_not_geolocatable_hint">The photo could not be geolocated. To automatically locate photos, please turn on geolocation in your Camera settings.</string>
+    <string name="photo_share">Share this photo</string>
+    <string name="photo_uploading">Uploading report, please wait</string>
+    <string name="photo_could_not_upload">Could not upload photo.  Please check your network connection.</string>
+    <string name="photo_upload_another">Upload another</string>
+
+    <string name="report_continue_without_photo_button">Continue without photo</string>
+    <string name="report_title">Your Report</string>
+    <string name="report_location_hint">Where is the location your report describes?</string>
+
+    <string name="tap_here">More details...</string>
+
+    <string name="tiles_map_pack_out_of_date">This map pack is cannot be used with this version of the app. \n\nWould you like to search for an update?</string>
+
+    <string name="placeview_menu">Menu</string>
+    <string name="placeview_current_location">Current Location</string>
+    <string name="placeview_choose_location">Choose location</string>
+    <string name="placeview_location_not_found">No locations found</string>
+    <string name="placeview_location_search">Searching for location</string>
+    <string name="placeview_contacts">Contacts</string>
+    <string name="placeview_no_contacts_with_addresses">None of your contacts have addresses.</string>
+    <string name="placeview_contacts_loading">Loading contacts</string>
+    <string name="placeview_remove">Remove</string>
+    <string name="placeview_saved_locations">Saved Locations</string>
+
+    <string name="poi_menu_title">Points of Interest</string>
+    <string name="poi_menu_entry">category</string>
+
+    <string name="settings_no_map_packs">You do not have any map packs installed.  Vector maps for
+      offline use are available as separate downloads.
+      \n\nWould you like to search for map packs now?</string>
+    <string name="settings_signed_in">Signed in to CycleStreets</string>
+    <string name="settings_awaiting">Account registration awaiting verification</string>
+
+    <string name="feedback_your_comments">Your comments</string>
+    <string name="feedback_sending">Sending route feedback to CycleStreets.net</string>
+
+    <string name="account_required_for_photos">To upload photos you must have a CycleStreets signin account.</string>
+    <string name="account_registering_is_free">Registering for an account is free.</string>
+    <string name="account_register_message">Register for an account</string>
+    <string name="account_signin_with_existing">Signin with an existing account</string>
+    <string name="account_desired_username">Desired username</string>
+    <string name="account_desired_password">Desired password</string>
+    <string name="account_confirm_password">Confirm password</string>
+    <string name="account_register_button">Register</string>
+    <string name="account_registering">Registering with CycleStreets.net</string>
+
+    <string name="account_signin_message">Please enter your account username and password to sign in.</string>
+    <string name="account_already_signed_in_format">You are already signed in as\n%1$s, %2$s</string>
+    <string name="account_username">Username</string>
+    <string name="account_password">Password</string>
+    <string name="account_clear_stored_button">Clear stored details</string>
+    <string name="account_signin_button">Sign in</string>
+    <string name="account_signing_in">Signing into CycleStreets.net</string>
+
+    <string name="account_email_format">The email address entered is not a properly formatted address.</string>
+    <string name="account_password_mismatch">Password and confirmation password do not match.</string>
+    <string name="account_username_too_short">Username must be at least five letters/numbers long.</string>
+    <string name="account_clear_details_confirm">Are you sure you want to clear the stored account details?</string>
+    <string name="account_pending">You have already registered an account.  Please check your email for the verification email.</string>
+    <string name="account_registration_is_free_long">Registration is free and registered users can add photos. To start the registration process please enter your details in the form below.</string>
+
+    <!-- LiveRide -->
+    <string name="liveride_keep_screen_on_enabled" translatable="false">Screen will remain on while LiveRide is running</string>
+    <string name="liveride_keep_screen_on_disabled" translatable="false">Screen will timeout as normal</string>
+
+    <!-- Permission justifications -->
+    <string name="perm_justification_format" translatable="false"><![CDATA[
+    <p>Tiếp theo, ứng dụng sẽ yêu cầu quyền <em>%1$s</em>.</p>
+    <p>Quyền này sẽ được sử dụng để:</p>%2$s
+    <p>Ứng dụng này có thể kiểm tra một cách độc lập vì ứng dụng là mã nguồn mở</p>
+  ]]></string>
+    <string name="perm_justification_after_denial_format" translatable="false"><![CDATA[
+    <p>Trước đó bạn đã từ chối quyền truy cập <em>%1$s</em>.  Quyền này cần thiết cho chức năng bạn đang cố gắng truy cập.  Ở bước tiếp theo, bạn sẽ được đưa đến trang thiết lập ứng dụng để thay đổi thiết lập này</p>
+    <p>Quyền này sẽ được sử dụng để:</p>%2$s
+    <p>Ứng dụng này có thể kiểm tra một cách độc lập vì ứng dụng là mã nguồn mở</p>
+  ]]></string>
+    <string name="perm_justification_read_external_storage" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; truy cập đến bản đồ đã được tải xuống ở bộ nhớ đệm</li>
+      <li>&nbsp; cho phép bạn chọn ảnh ở bộ sưu tập ảnh để sử dụng trong chức năn Thêm ảnh</li>
+    </ul>
+  ]]></string>
+    <string name="perm_justification_write_external_storage" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; bản đồ tải xuống được lưu vào bộ nhớ đệm <b>(nếu không ứng dụng sẽ hoạt động kém và tiêu thụ nhiều dữ liệu hơn)</b></li>
+      <li>&nbsp; cho phép máy ảnh của ứng dụng truy cập trực tiếp vào thư viện ảnh trong chức năng thêm ảnh mới.</li>
+    </ul>
+  ]]></string>
+    <string name="perm_justification_access_fine_location" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; định vị vị trí của bạn ở trung tâm khi được yêu cầu</li>
+      <li>&nbsp; cung cấp chỉ dẫn từng bước theo định vị (chức năng LiveRide).</li>
+    </ul>
+    <p>Vị trí của bạn sẽ không được lưu trữ ở bất cứ đâu.</p>
+    <p>Vị trí của bản chỉ được gửi đến máy chủ khi thiết lập lộ trình từ địa điểm hiện tại</p>
+  ]]></string>
+    <string name="perm_justification_read_contacts" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; cho phép bạn tìm kiếm địa chỉ trong danh bạ trên bản đồ, và tính toán lộ trình đến những địa điểm đó </li>
+    </ul>
+    <p>Thông tin liên hệ của bạn sẽ không được lưu trữ ở bất cứ đâu, dù cục bộ hay từ xa, và chỉ được gửi đến máy chủ của chúng tôi với mục đích tính toán lộ trình</p>
+  ]]></string>
+
+    <string name="perm_needed">Permission needs granting in device settings.</string>
+
+    <string name="show_remaining_time">Show remaining time</string>
+    <string name="show_ETA">Show estimated time of arrival</string>
+    <string name="remaining">Remaining</string>
+    <string name="slash_ETA">/ ETA</string>
+
+    <string name="duration">Duration</string>
+    <string name="distance">Distance</string>
+    <string name="circular_route">Circular Route</string>
+    <string name="create_circular_route_desc">Create a circular route based on a duration or distance</string>
+    <string name="create_circular_route_button">Create circular route</string>
+    <string name="mins">mins</string>
+    <string name="choose_pois_to_route_via">Optionally, choose Points of Interest to route via:</string>
+    <string name="pois">POIs</string>
+    <string name="num_poitypes_selected">%1$s selected</string>
+
+    <!-- Waymark labels -->
+    <string name="waypoint_renumber_title">Remove or renumber waypoint</string>
+    <string name="waypoint_start_initial">S</string>
+    <string name="waypoint_finish_initial">F</string>
+    <string name="waypoint_start">Start</string>
+    <string name="waypoint">waypoint</string>
+    <string name="waypoint_finish">Finish</string>
+    <string name="remove_waypoint">Remove waypoint</string>
+    <string name="change_to">"Change to "</string>
+
+</resources>
