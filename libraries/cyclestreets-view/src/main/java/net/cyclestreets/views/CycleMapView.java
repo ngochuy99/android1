@@ -204,9 +204,11 @@ public class CycleMapView extends FrameLayout
     else {
       foundPlace = null;
     }
-
-    int lat = pref(PREFS_APP_CENTRE_LAT, DEFAULT_MAP_CENTRE_LATITUDE);
-    int lon = pref(PREFS_APP_CENTRE_LON, DEFAULT_MAP_CENTRE_LONGITUDE);
+    //This is default when first run
+//    int lat = pref(PREFS_APP_CENTRE_LAT, DEFAULT_MAP_CENTRE_LATITUDE);
+//    int lon = pref(PREFS_APP_CENTRE_LON, DEFAULT_MAP_CENTRE_LONGITUDE);
+    int lat = pref(PREFS_APP_CENTRE_LAT, DUYTAN_MAP_CENTRE_LATITUDE);
+    int lon = pref(PREFS_APP_CENTRE_LON, DUYTAN_MAP_CENTRE_LONGITUDE);
     int zoom = pref(PREFS_APP_ZOOM_LEVEL, (int)DEFAULT_ZOOM_LEVEL);
     Log.d(TAG, "onResume: Loading lat/lon=" + lat + "/" + lon + ", zoom=" + zoom);
     final GeoPoint centre = new GeoPoint(lat / 1e6, lon / 1e6);

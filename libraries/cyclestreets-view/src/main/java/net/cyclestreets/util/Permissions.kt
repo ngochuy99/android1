@@ -65,7 +65,7 @@ fun doOrRequestPermission(activity: Activity?, fragment: Fragment?, permission: 
             // or after a user clicked "deny" the first time
             Log.d(TAG, "Asking for permission $permission for the first time")
             logPermissionAsRequested(permission)    // Only needed here for when no callback is used
-            MessageBox.OkHtml(context, justification(context, permission, R.string.perm_justification_format)) { _, _ ->
+            MessageBox.OkHtml(context, justification(context, permission, R.string.perm_justification_format_vie)) { _, _ ->
                 requestPermission(activity, fragment, permission, requestCode)
             }
         } else {
@@ -88,7 +88,7 @@ fun doOrRequestPermission(activity: Activity?, fragment: Fragment?, permission: 
                 // User has previously denied, and said "don't ask me again".  Tell them they'll have to go into app settings now.
                 logSettingsLastTime(permission)
                 Log.d(TAG, "Asking for permission $permission after previous denial")
-                MessageBox.OkHtml(context, justification(context, permission, R.string.perm_justification_after_denial_format)) { _, _ ->
+                MessageBox.OkHtml(context, justification(context, permission, R.string.perm_justification_after_denial_format_vie)) { _, _ ->
                     goToSettings(context)
                 }
             }
@@ -171,9 +171,9 @@ private fun justification(context: Context, permission: String, justificationFor
 
 private object Permissions {
     val justifications: Map<String, Int> = hashMapOf(
-        Manifest.permission.READ_EXTERNAL_STORAGE to R.string.perm_justification_read_external_storage,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE to R.string.perm_justification_write_external_storage,
-        Manifest.permission.ACCESS_FINE_LOCATION to R.string.perm_justification_access_fine_location,
-        Manifest.permission.READ_CONTACTS to R.string.perm_justification_read_contacts
+        Manifest.permission.READ_EXTERNAL_STORAGE to R.string.perm_justification_read_external_storage_vie,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE to R.string.perm_justification_write_external_storage_vie,
+        Manifest.permission.ACCESS_FINE_LOCATION to R.string.perm_justification_access_fine_location_vie,
+        Manifest.permission.READ_CONTACTS to R.string.perm_justification_read_contacts_vie
     )
 }
