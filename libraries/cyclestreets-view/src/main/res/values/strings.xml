@@ -150,10 +150,20 @@
     <p>This permission will be used to:</p>%2$s
     <p>This can be independently verified as our app is open source.</p>
   ]]></string>
+  <string name="perm_justification_format_vie" translatable="false"><![CDATA[
+    <p>Tiếp theo, ứng dụng sẽ yêu cầu quyền <em>%1$s</em>.</p>
+    <p>Quyền này sẽ được sử dụng để:</p>%2$s
+    <p>Ứng dụng này có thể kiểm tra một cách độc lập vì ứng dụng là mã nguồn mở</p>
+  ]]></string>
   <string name="perm_justification_after_denial_format" translatable="false"><![CDATA[
     <p>You have previously denied this app the permission to <em>%1$s</em>.  It is required for the functionality you are trying to access.  In the next step, you will be taken to the application settings page to give you an opportunity to change this.</p>
     <p>This permission will be used to:</p>%2$s
     <p>This can be independently verified as our app is open source.</p>
+  ]]></string>
+  <string name="perm_justification_after_denial_format_vie" translatable="false"><![CDATA[
+    <p>Trước đó bạn đã từ chối quyền truy cập <em>%1$s</em>.  Quyền này cần thiết cho chức năng bạn đang cố gắng truy cập.  Ở bước tiếp theo, bạn sẽ được đưa đến trang thiết lập ứng dụng để thay đổi thiết lập này</p>
+    <p>Quyền này sẽ được sử dụng để:</p>%2$s
+    <p>Ứng dụng này có thể kiểm tra một cách độc lập vì ứng dụng là mã nguồn mở</p>
   ]]></string>
   <string name="perm_justification_read_external_storage" translatable="false"><![CDATA[
     <ul>
@@ -161,10 +171,22 @@
       <li>&nbsp; allow you to select photographs from your image library for use in the Add Photo feature.</li>
     </ul>
   ]]></string>
+  <string name="perm_justification_read_external_storage_vie" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; truy cập đến bản đồ đã được tải xuống ở bộ nhớ đệm</li>
+      <li>&nbsp; cho phép bạn chọn ảnh ở bộ sưu tập ảnh để sử dụng trong chức năn Thêm ảnh</li>
+    </ul>
+  ]]></string>
   <string name="perm_justification_write_external_storage" translatable="false"><![CDATA[
     <ul>
       <li>&nbsp; cache downloaded map tiles <b>(without this the app will function poorly and consume much more data)</b></li>
       <li>&nbsp; allow your camera app to directly take photographs in the Add Photo feature.</li>
+    </ul>
+  ]]></string>
+  <string name="perm_justification_write_external_storage_vie" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; bản đồ tải xuống được lưu vào bộ nhớ đệm <b>(nếu không ứng dụng sẽ hoạt động kém và tiêu thụ nhiều dữ liệu hơn)</b></li>
+      <li>&nbsp; cho phép máy ảnh của ứng dụng truy cập trực tiếp vào thư viện ảnh trong chức năng thêm ảnh mới.</li>
     </ul>
   ]]></string>
   <string name="perm_justification_access_fine_location" translatable="false"><![CDATA[
@@ -175,11 +197,25 @@
     <p>Your location history is not stored anywhere, locally or remotely.</p>
     <p>Your current location may only be sent to our servers when planning a route from your current location.</p>
   ]]></string>
+  <string name="perm_justification_access_fine_location_vie" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; định vị vị trí của bạn ở trung tâm khi được yêu cầu</li>
+      <li>&nbsp; cung cấp chỉ dẫn từng bước theo định vị (chức năng LiveRide).</li>
+    </ul>
+    <p>Vị trí của bạn sẽ không được lưu trữ ở bất cứ đâu.</p>
+    <p>Vị trí của bản chỉ được gửi đến máy chủ khi thiết lập lộ trình từ địa điểm hiện tại</p>
+  ]]></string>
   <string name="perm_justification_read_contacts" translatable="false"><![CDATA[
     <ul>
       <li>&nbsp; allow you to find the addresses of your contacts on the map, and create routes to these locations.</li>
     </ul>
     <p>Your contact information is not stored anywhere, locally or remotely, and is only sent to our servers for the purposes of planning a route.</p>
+  ]]></string>
+  <string name="perm_justification_read_contacts_vie" translatable="false"><![CDATA[
+    <ul>
+      <li>&nbsp; cho phép bạn tìm kiếm địa chỉ trong danh bạ trên bản đồ, và tính toán lộ trình đến những địa điểm đó </li>
+    </ul>
+    <p>Thông tin liên hệ của bạn sẽ không được lưu trữ ở bất cứ đâu, dù cục bộ hay từ xa, và chỉ được gửi đến máy chủ của chúng tôi với mục đích tính toán lộ trình</p>
   ]]></string>
 
   <string name="perm_needed">Permission needs granting in device settings.</string>
