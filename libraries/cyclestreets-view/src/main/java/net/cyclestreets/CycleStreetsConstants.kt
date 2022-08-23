@@ -10,6 +10,9 @@ const val MIN_ZOOM_LEVEL = 2.0
 // Greenwich!
 const val DEFAULT_MAP_CENTRE_LONGITUDE = 0
 const val DEFAULT_MAP_CENTRE_LATITUDE = 51477841
+//DuyTanCoordinate
+const val DUYTAN_MAP_CENTRE_LONGITUDE = 105787600
+const val DUYTAN_MAP_CENTRE_LATITUDE = 21030400
 // No cycling at the Poles
 const val MAX_LATITUDE_NORTH = 80
 const val MAX_LATITUDE_SOUTH = -80
