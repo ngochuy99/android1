@@ -3,8 +3,10 @@ package net.cyclestreets.views;
 import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Canvas;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -36,6 +38,7 @@ import org.osmdroid.views.overlay.Overlay;
 
 import java.util.List;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
 
@@ -204,12 +207,33 @@ public class CycleMapView extends FrameLayout
     else {
       foundPlace = null;
     }
+    int lat = 0,lon = 0;
+    GeoPoint centre = null;
+    LocationManager locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+    if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+      Log.i(TAG,"Permission not granted");
+      lat = pref(PREFS_APP_CENTRE_LAT, DUYTAN_MAP_CENTRE_LATITUDE);
+      lon = pref(PREFS_APP_CENTRE_LON, DUYTAN_MAP_CENTRE_LONGITUDE);
+      if(lat == 0 && lon == 0){
+        lat = 21030400;
+        lon = 105787600;
+      }
+      centre = new GeoPoint(lat / 1e6, lon / 1e6);
 
-    int lat = pref(PREFS_APP_CENTRE_LAT, DEFAULT_MAP_CENTRE_LATITUDE);
-    int lon = pref(PREFS_APP_CENTRE_LON, DEFAULT_MAP_CENTRE_LONGITUDE);
+    }
+    else{
+      Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+      if(location.getLatitude()!=0 && location.getLongitude()!=0){
+        centre = new GeoPoint(location.getLatitude(),location.getLongitude());
+      }
+    }
+
+    //This is default when first run
+//    int lat = pref(PREFS_APP_CENTRE_LAT, DEFAULT_MAP_CENTRE_LATITUDE);
+//    int lon = pref(PREFS_APP_CENTRE_LON, DEFAULT_MAP_CENTRE_LONGITUDE);
     int zoom = pref(PREFS_APP_ZOOM_LEVEL, (int)DEFAULT_ZOOM_LEVEL);
     Log.d(TAG, "onResume: Loading lat/lon=" + lat + "/" + lon + ", zoom=" + zoom);
-    final GeoPoint centre = new GeoPoint(lat / 1e6, lon / 1e6);
+//    final GeoPoint centre = new GeoPoint(lat / 1e6, lon / 1e6);
     getScroller().abortAnimation();
     getController().setCenter(centre);
     centreOn(centre);

@@ -2,15 +2,23 @@ package net.cyclestreets;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.res.Resources;
 import android.webkit.WebView;
 
 import net.cyclestreets.util.MessageBox;
 
 public class Welcome {
-  public static void welcome(final Context context) {
-    launch(context,
-        "CycleStreets",
-        "file:///android_asset/welcome.html");
+  public static void welcome(final Context context, Resources resources) {
+    if(resources.getConfiguration().locale.getLanguage().equals("vi")){
+      launch(context,
+              "CycleStreets",
+              "file:///android_asset/welcome_vi.html");
+    }
+    else {
+      launch(context,
+              "CycleStreets",
+              "file:///android_asset/welcome.html");
+    }
   }
 
   public static void whatsNew(final Context context) {

@@ -1,5 +1,6 @@
 package net.cyclestreets
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -73,20 +74,26 @@ open class CycleMapFragment : Fragment(), Undoable {
 
             // If we have permission to write to external storage, we'll use the default OSMDroid location for caching
             // map tiles.  Therefore, when permission is granted, clear state accordingly so this is possible.
-            if (permission == WRITE_EXTERNAL_STORAGE)
+            if (permission == WRITE_EXTERNAL_STORAGE) {
                 requestPermissionsResultAction(grantResult, permission) {
                     val oldCacheLocation: File = Configuration.getInstance().osmdroidTileCache
 
                     CycleStreetsPreferences.clearOsmdroidCacheLocation()
                     Configuration.setConfigurationProvider(DefaultConfigurationProvider())
-                    Configuration.getInstance().load(context, PreferenceManager.getDefaultSharedPreferences(context))
+                    Configuration.getInstance()
+                        .load(context, PreferenceManager.getDefaultSharedPreferences(context))
                     val newCacheLocation: File = Configuration.getInstance().osmdroidTileCache
 
-                    Log.i(TAG, "Permission $WRITE_EXTERNAL_STORAGE granted; update OSMDroid cache " +
-                               "location from ${oldCacheLocation.absolutePath} to ${newCacheLocation.absolutePath}")
+                    Log.i(
+                        TAG, "Permission $WRITE_EXTERNAL_STORAGE granted; update OSMDroid cache " +
+                                "location from ${oldCacheLocation.absolutePath} to ${newCacheLocation.absolutePath}"
+                    )
                     if (newCacheLocation.absolutePath != oldCacheLocation.absolutePath)
                         AsyncDelete().execute(oldCacheLocation)
+                    requestPermissions(arrayOf(ACCESS_FINE_LOCATION), GENERIC_PERMISSION_REQUEST);
                 }
+            }
+
         }
     }
 
