@@ -20,7 +20,7 @@ class CycleStreets : MainNavDrawerActivity(), RouteMapActivity, PhotoMapActivity
     }
 
     override fun onFirstRun() {
-        Welcome.welcome(this)
+        Welcome.welcome(this,resources)
     }
 
     override fun onNewVersion() {
