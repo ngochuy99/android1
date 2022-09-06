@@ -8,6 +8,7 @@ import net.cyclestreets.api.client.RetrofitApiClient
 import net.cyclestreets.core.R
 
 interface CycleStreetsApi {
+    fun getOpenJourneyJson(api_key:String, lonLat: DoubleArray): String
     fun getJourneyJson(plan: String, leaving: String?, arriving: String?, speed: Int, lonLat: DoubleArray): String
     fun getCircularJourneyJson(lonLat: DoubleArray, distance: Int?, duration: Int?, poiTypes: String?): String
     fun retrievePreviousJourneyJson(plan: String, itineraryId: Long): String
@@ -30,6 +31,7 @@ object ApiClient : CycleStreetsApi {
     private const val API_HOST = "https://www.cyclestreets.net"
     private const val API_HOST_V2 = "https://api.cyclestreets.net"
     private const val BLOG_HOST = "https://www.cyclestreets.org"
+    private const val API_OPEN = "https://api.openrouteservice.org"
 
     private lateinit var delegate: CycleStreetsApi
     private lateinit var messages: Map<Int, String>
@@ -41,6 +43,7 @@ object ApiClient : CycleStreetsApi {
             .withApiKey(findApiKey(context))
             .withV1Host(API_HOST)
             .withV2Host(API_HOST_V2)
+            .withOpenHost(API_OPEN)
             .withBlogHost(BLOG_HOST)
             .build()
         delegate = ApiClientImpl(retrofitApiClient)
@@ -89,6 +92,9 @@ object ApiClient : CycleStreetsApi {
 
     override fun getJourneyJson(plan: String, leaving: String?, arriving: String?, speed: Int, lonLat: DoubleArray): String {
         return delegate.getJourneyJson(plan, leaving, arriving, speed, lonLat)
+    }
+    override fun getOpenJourneyJson(api_key:String,lonLat:DoubleArray):String{
+        return delegate.getOpenJourneyJson(api_key,lonLat);
     }
     override fun getCircularJourneyJson(lonLat: DoubleArray, distance: Int?, duration: Int?, poiTypes: String?): String {
         return delegate.getCircularJourneyJson(lonLat, distance, duration, poiTypes)
@@ -139,6 +145,14 @@ object ApiClient : CycleStreetsApi {
 }
 
 class ApiClientImpl(private val retrofitApiClient: RetrofitApiClient): CycleStreetsApi {
+    override fun getOpenJourneyJson(api_key: String, lonLat: DoubleArray): String {
+        val startPoints = itineraryPoints(*lonLat)
+        val split = startPoints.split("|")
+        val start = split[0].split(",")[0]+","+split[0].split(",")[1];
+        val end = split[1].split(",")[0]+","+split[1].split(",")[1];
+        return retrofitApiClient.getOpenJourneyJson(api_key,start,end);
+    }
+
     override fun getJourneyJson(plan: String,
                                 leaving: String?,
                                 arriving: String?,

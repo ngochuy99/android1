@@ -49,6 +49,7 @@ public class RetrofitApiClient {
 
   private final V1Api v1Api;
   private final V2Api v2Api;
+  private final OpenAPI openAPI;
   private final BlogApi blogApi;
   private final Context context;
 
@@ -100,6 +101,14 @@ public class RetrofitApiClient {
         .baseUrl(builder.blogHost)
         .build();
     blogApi = retrofitBlog.create(BlogApi.class);
+
+    Retrofit retrofitOpen = new Retrofit.Builder()
+            .client(client)
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(retrofit2.converter.simplexml.SimpleXmlConverterFactory.createNonStrict())
+            .baseUrl(builder.openHost)
+            .build();
+    openAPI = retrofitOpen.create(OpenAPI.class);
   }
 
   public static class Builder {
@@ -108,6 +117,7 @@ public class RetrofitApiClient {
     private String v1Host;
     private String v2Host;
     private String blogHost;
+    private String openHost;
 
     public Builder withContext(Context context) {
       this.context = context;
@@ -130,6 +140,11 @@ public class RetrofitApiClient {
 
     public Builder withBlogHost(String blogHost) {
       this.blogHost = blogHost;
+      return this;
+    }
+
+    public Builder withOpenHost(String openHost){
+      this.openHost = openHost;
       return this;
     }
 
@@ -171,6 +186,16 @@ public class RetrofitApiClient {
   public Blog getBlogEntries() throws IOException {
     Response<BlogFeedDto> response = blogApi.getBlogEntries().execute();
     return response.body().toBlog();
+  }
+
+  // --------------------------------------------------------------------------------
+  // Open APIs
+  // --------------------------------------------------------------------------------
+  public String getOpenJourneyJson(final String api_key,
+                               final String start,
+                               final String end) throws IOException {
+    Response<String> response = openAPI.getJourneyJson(api_key,start,end).execute();
+    return response.body();
   }
 
   // --------------------------------------------------------------------------------

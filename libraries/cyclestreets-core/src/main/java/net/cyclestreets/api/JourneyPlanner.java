@@ -4,6 +4,11 @@ import net.cyclestreets.routing.Waypoints;
 
 public class JourneyPlanner {
 
+  public static String getOpenJourneyJson(final String api_key,
+                                          final Waypoints waypoints){
+    return ApiClient.INSTANCE.getOpenJourneyJson(api_key,lonLat(waypoints));
+  }
+
   public static String getJourneyJson(final String plan,
                                       final int speed,
                                       final Waypoints waypoints) {
